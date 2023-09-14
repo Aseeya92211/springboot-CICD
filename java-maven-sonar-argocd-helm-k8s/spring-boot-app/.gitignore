@@ -1,0 +1,10 @@
+application.properties
+StartApplication.class
+main.css
+main.js
+index.html
+pom.properties
+maven-compiler-plugin/compile/default-compile/createdFiles.lst
+maven-compiler-plugin/compile/default-compile/inputFiles.lst
+spring-boot-app/target/spring-boot-web.jar
+spring-boot-app/target/spring-boot-web.jar
