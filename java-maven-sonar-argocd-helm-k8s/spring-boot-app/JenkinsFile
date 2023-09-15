@@ -59,11 +59,15 @@ pipeline {
                     BUILD_NUMBER=${BUILD_NUMBER}
                     sed -i "s|image: aseeya25/ultimate-cicd:.*|image: aseeya25/ultimate-cicd:${BUILD_NUMBER}|" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
                     git add java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
-                    git add java-maven-sonar-argocd-helm-k8s/spring-boot-app/target/spring-boot-web.jar
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:master
                 '''
             }
+        }
+    }
+        post { 
+        always { 
+            cleanWs()
         }
     }
   }
